@@ -30,3 +30,11 @@ medications <- medications %>%
            stop = date(stop),
            care_time = difftime(stop, start, units = "days")
            )
+
+#reformat care_time variable 
+medication_by_length <- medications %>% 
+    separate(care_time, into = c("care_time_days", NA), sep = " ") %>% 
+    select(code, description, base_cost, payer_coverage, reason_code,
+           reason, care_time_days)
+View(medication_by_length
+     )
