@@ -1,6 +1,7 @@
 #Demographic information for patients_boston df
 
 #Summary variables
+
 patients_boston_race <- patients_boston %>% 
     group_by(RACE) %>% 
     summarize(by_race = n()) %>% 
